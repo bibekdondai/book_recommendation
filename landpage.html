@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== CSS ===== -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <!-- ===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <title>Book Recommendation System</title>
+</head>
+
+<body>
+    <!-- ................Navigation bar............. -->
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen'></i>
+            <span class="logo navLogo"><a href="#">eBooks</a></span>
+
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="#">eBooks</a></span>
+                    <i class='bx bx-x siderbarClose'></i>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href= "{{ url_for('landpage') }}">Home</a></li>
+                    <!-- <li><a href="#">Home</a></li> -->
+                    <li class="dropdown"><button class="dropbtn">Genre</button>
+                        <div class="dropdown-content">
+                    {% for name in name_list %}
+                        <a href="#">{{ name }}</a>
+                    {% endfor %}
+                    </div>
+                    </li>
+                    
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+                </ul>
+            
+
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    <i class='bx bx-moon moon'></i>
+                    <i class='bx bx-sun sun'></i>
+                </div>
+
+                <div class="searchBox">
+                    <div class="searchToggle">
+                        <i class='bx bx-x cancel'></i>
+                        <i class='bx bx-search search'></i>
+                    </div>
+
+                    <div class="search-field">
+                        <input type="text" placeholder="Search...">
+                        <i class='bx bx-search'></i>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- ..................slider............. -->
+    <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="img1.png" style="width:100%">
+            <!-- <div class="text">Caption Text</div> -->
+        </div>
+        <!-- <p>lorem100 -->
+        </p>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="img2.png" style="width:100%">
+            <!-- <div class="text">Caption Two</div> -->
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="img3.png" style="width:100%">
+            <!-- <div class="text">Caption Three</div> -->
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    <!-- ''''''''''second-slider................ -->
+
+    <header>
+        <h1>Most Rated Books</h1>
+    </header>
+    <section>
+        <div class="product">
+            <picture>
+                <img src="book1.jpg" alt="">
+            </picture>
+            <div class="detail">
+                <p>
+                    <b>Finding God</b><br>
+                    <small>Nobel</small>
+                </p>
+            </div>
+            <div class="button">
+                <p class="star">
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                </p>
+                <a href="#">Add-cart</a>
+            </div>
+        </div>
+        <div class="product">
+            <picture>
+                <img src="book2.jpg" alt="">
+            </picture>
+            <div class="detail">
+                <p>
+                    <b>The Hobbit</b><br>
+                    <small>Action</small>
+                </p>
+            </div>
+            <div class="button">
+                <p class="star">
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                </p>
+                <a href="#">Add-cart</a>
+            </div>
+        </div>
+        <div class="product">
+            <picture>
+                <img src="book1.jpg" alt="">
+            </picture>
+            <div class="detail">
+                <p>
+                    <b>Finding God </b><br>
+                    <small>Nobel</small>
+                </p>
+            </div>
+            <div class="button">
+                <p class="star">
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                </p>
+                <a href="#">Add-cart</a>
+            </div>
+        </div>
+        <div class="product">
+            <picture>
+                <img src="book2.jpg" alt="">
+            </picture>
+            <div class="detail">
+                <p>
+                    <b>Product Four</b><br>
+                    <small>New arrival</small>
+                </p>
+            </div>
+            <div class="button">
+                <p class="star">
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                </p>
+                <a href="#">Add-cart</a>
+            </div>
+        </div>
+        <div class="product">
+            <picture>
+                <img src="book2.jpg" alt="">
+            </picture>
+            <div class="detail">
+                <p>
+                    <b>Product Five</b><br>
+                    <small>New arrival</small>
+                </p>
+            </div>
+            <div class="button">
+                <p class="star">
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                </p>
+                <a href="#">Add-cart</a>
+            </div>
+        </div>
+        <div class="product">
+            <picture>
+                <img src="book1.jpg" alt="">
+            </picture>
+            <div class="detail">
+                <p>
+                    <b>Product Six</b><br>
+                    <small>New arrival</small>
+                </p>
+            </div>
+            <div class="button">
+                <p class="star">
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                </p>
+                <a href="#">Add-cart</a>
+            </div>
+        </div>
+        <div class="product">
+            <picture>
+                <img src="book1.jpg" alt="">
+            </picture>
+            <div class="detail">
+                <p>
+                    <b>Product Seven</b><br>
+                    <small>New arrival</small>
+                </p>
+            </div>
+            <div class="button">
+                <p class="star">
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                </p>
+                <a href="#">Add-cart</a>
+            </div>
+        </div>
+        <div class="product">
+            <picture>
+                <img src="book1.jpg" alt="">
+            </picture>
+            <div class="detail">
+                <p>
+                    <b>Product Eight</b><br>
+                    <small>New arrival</small>
+                </p>
+            </div>
+            <div class="button">
+                <p class="star">
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                </p>
+                <a href="#">Add-cart</a>
+            </div>
+        </div>
+        <div class="product">
+            <picture>
+                <img src="book2.jpg" alt="">
+            </picture>
+            <div class="detail">
+                <p>
+                    <b>Product Nine</b><br>
+                    <small>New arrival</small>
+                </p>
+            </div>
+            <div class="button">
+                <p class="star">
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                </p>
+                <a href="#">Add-cart</a>
+            </div>
+        </div>
+        <div class="product">
+            <picture>
+                <img src="book1.jpg" alt="">
+            </picture>
+            <div class="detail">
+                <p>
+                    <b>Product Ten</b><br>
+                    <small>New arrival</small>
+                </p>
+            </div>
+            <div class="button">
+                <p class="star">
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                </p>
+                <a href="#">Add-cart</a>
+            </div>
+        </div>
+        <div class="product">
+            <picture>
+                <img src="book2.jpg" alt="">
+            </picture>
+            <div class="detail">
+                <p>
+                    <b>Product Eleven</b><br>
+                    <small>New arrival</small>
+                </p>
+            </div>
+            <div class="button">
+                <p class="star">
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                </p>
+                <a href="#">Add-cart</a>
+            </div>
+        </div>
+        </div> 
+    </section>
+    <br>
+    <br>
+    <!-- ........................third-slider.................... -->
+    <header>
+        <h1>Most Rated Books</h1>
+    </header>
+    <br>
+    <section>
+        <div class="product">
+            <picture>
+                <img src="book1.jpg" alt="">
+            </picture>
+            <div class="detail">
+                <p>
+                    <b>Finding God</b><br>
+                    <small>Nobel</small>
+                </p>
+            </div>
+            <div class="button">
+                <p class="star">
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                </p>
+                <a href="#">Add-cart</a>
+            </div>
+        </div>
+        <div class="product">
+            <picture>
+                <img src="book2.jpg" alt="">
+            </picture>
+            <div class="detail">
+                <p>
+                    <b>The Hobbit</b><br>
+                    <small>Action</small>
+                </p>
+            </div>
+            <div class="button">
+                <p class="star">
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                </p>
+                <a href="#">Add-cart</a>
+            </div>
+        </div>
+        <div class="product">
+            <picture>
+                <img src="book1.jpg" alt="">
+            </picture>
+            <div class="detail">
+                <p>
+                    <b>Finding God </b><br>
+                    <small>Nobel</small>
+                </p>
+            </div>
+            <div class="button">
+                <p class="star">
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                </p>
+                <a href="#">Add-cart</a>
+            </div>
+        </div>
+        <div class="product">
+            <picture>
+                <img src="book2.jpg" alt="">
+            </picture>
+            <div class="detail">
+                <p>
+                    <b>Product Four</b><br>
+                    <small>New arrival</small>
+                </p>
+            </div>
+            <div class="button">
+                <p class="star">
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                </p>
+                <a href="#">Add-cart</a>
+            </div>
+        </div>
+        <div class="product">
+            <picture>
+                <img src="book2.jpg" alt="">
+            </picture>
+            <div class="detail">
+                <p>
+                    <b>Product Five</b><br>
+                    <small>New arrival</small>
+                </p>
+            </div>
+            <div class="button">
+                <p class="star">
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                </p>
+                <a href="#">Add-cart</a>
+            </div>
+        </div>
+        <div class="product">
+            <picture>
+                <img src="book1.jpg" alt="">
+            </picture>
+            <div class="detail">
+                <p>
+                    <b>Product Six</b><br>
+                    <small>New arrival</small>
+                </p>
+            </div>
+            <div class="button">
+                <p class="star">
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                </p>
+                <a href="#">Add-cart</a>
+            </div>
+        </div>
+        <div class="product">
+            <picture>
+                <img src="book1.jpg" alt="">
+            </picture>
+            <div class="detail">
+                <p>
+                    <b>Product Seven</b><br>
+                    <small>New arrival</small>
+                </p>
+            </div>
+            <div class="button">
+                <p class="star">
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                </p>
+                <a href="#">Add-cart</a>
+            </div>
+        </div>
+        <div class="product">
+            <picture>
+                <img src="book1.jpg" alt="">
+            </picture>
+            <div class="detail">
+                <p>
+                    <b>Product Eight</b><br>
+                    <small>New arrival</small>
+                </p>
+            </div>
+            <div class="button">
+                <p class="star">
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                </p>
+                <a href="#">Add-cart</a>
+            </div>
+        </div>
+        <div class="product">
+            <picture>
+                <img src="book2.jpg" alt="">
+            </picture>
+            <div class="detail">
+                <p>
+                    <b>Product Nine</b><br>
+                    <small>New arrival</small>
+                </p>
+            </div>
+            <div class="button">
+                <p class="star">
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                </p>
+                <a href="#">Add-cart</a>
+            </div>
+        </div>
+        <div class="product">
+            <picture>
+                <img src="book1.jpg" alt="">
+            </picture>
+            <div class="detail">
+                <p>
+                    <b>Product Ten</b><br>
+                    <small>New arrival</small>
+                </p>
+            </div>
+            <div class="button">
+                <p class="star">
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                </p>
+                <a href="#">Add-cart</a>
+            </div>
+        </div>
+        <div class="product">
+            <picture>
+                <img src="book2.jpg" alt="">
+            </picture>
+            <div class="detail">
+                <p>
+                    <b>Product Eleven</b><br>
+                    <small>New arrival</small>
+                </p>
+            </div>
+            <div class="button">
+                <p class="star">
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                    <strong>&star;</strong>
+                </p>
+                <a href="#">Add-cart</a>
+            </div>
+        </div>
+        </div> 
+    </section>
+        <!-- .....footer..... -->
+        <div class="main-wrap">
+            <div class="footer-wrap">
+                <div class="footer-wrap-1">
+                    <div class="footer-section">
+                        <h1>About</h1>
+                        <a href="#">Services</a>
+                        <a href="#">Pricing</a>
+                        <a href="#">Careers</a>
+                    </div>
+                    <div class="footer-section">
+                        <h1>Resources</h1>
+                        <a href="#">Docs</a>
+                        <a href="#">Blog</a>
+                        <a href="#">eBooks</a>
+                        <a href="#">Videos</a>
+                    </div>
+                    <div class="footer-section">
+                        <h1>Contact</h1>
+                        <a href="#">Help</a>
+                        <a href="#">Sales</a>
+                        <a href="#">Advertise</a>
+                    </div>
+                    <div class="footer-section">
+                        <h1>Stay Connected</h1>
+                        <p>Subscribe to our newsletter to receive latest news.</p>
+                        <form action="">
+                            <input type="email" name="email" id="email" placeholder="Enter Email Address">
+                            <button type="submit" class="btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer-wrap-2">
+                    <div class="line"></div>
+                    <div class="social-link">
+                        <a href="#">
+                            <img src="fb.png" alt="Facebook">
+                        </a>
+                        <a href="#">
+                            <img src="google.png" alt="Google">
+                        </a>
+                        <a href="#">
+                            <img src="linkedin.png" alt="linkedin">
+                        </a>
+                        <a href="#">
+                            <img src="twitter.png" alt="twitter">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="first-box">
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+                <div class="last-box">
+                    <a href="#">&copy; eBooks. Inc</a>
+                </div>
+            </div>
+        </div>
+        <!-- css....................................... -->
+<style>
+    /* ===== Google Font Import - Poppins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.4s ease;;
+
+}
+img{
+    cursor: pointer;
+}
+img:hover{
+    box-shadow:#0c0f17;
+}
+
+
+/* ===== Colours ===== */
+:root{
+    --body-color: #E4E9F7;
+    --nav-color: rgb(17,107,143);
+    --side-nav: #010718;
+    --text-color: #FFF;
+    --search-bar: #F2F2F2;
+    --search-text: #010718;
+}
+
+body{
+    height: 100vh;
+    /* background-color: var(--body-color); */
+    background-color: #1d1e30;
+    /* overflow: hidden; */
+}
+
+body.dark{
+    --body-color: #18191A;
+    --nav-color: #242526;
+    --side-nav: #242526;
+    --text-color: #CCC;
+    --search-bar: #242526;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background-color: var(--nav-color);
+    z-index: 100;
+}
+
+body.dark nav{
+    border: 1px solid #393838;
+
+}
+
+nav .nav-bar{
+    position: relative;
+    height: 100%;
+    max-width: 1000px;
+    width: 100%;
+    background-color: var(--nav-color);
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .nav-bar .sidebarOpen{
+    color: var(--text-color);
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+nav .nav-bar .logo a{
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.menu .logo-toggle{
+    display: none;
+}
+
+.nav-bar .nav-links{
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar .nav-links li{
+    margin: 0 5px;
+    list-style: none;
+}
+
+.nav-links li a{
+    position: relative;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px;
+}
+
+.nav-links li a::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 2px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.nav-links li:hover a::before{
+    opacity: 1;
+}
+
+.nav-bar .darkLight-searchBox{
+    display: flex;
+    align-items: center;
+}
+
+/* .......dropdown........ */
+nav .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+nav .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+nav .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+
+
+
+
+.darkLight-searchBox .dark-light,
+.darkLight-searchBox .searchToggle{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+
+.dark-light i,
+.searchToggle i{
+    position: absolute;
+    color: var(--text-color);
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dark-light i.sun{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.dark-light.active i.sun{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dark-light.active i.moon{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.searchToggle i.cancel{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.searchToggle.active i.cancel{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.searchToggle.active i.search{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.searchBox{
+    position: relative;
+}
+
+.searchBox .search-field{
+    position: absolute;
+    bottom: -85px;
+    right: 5px;
+    height: 50px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    background-color: var(--nav-color);
+    padding: 3px;
+    border-radius: 6px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.searchToggle.active ~ .search-field{
+    bottom: -74px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.search-field::before{
+    content: '';
+    position: absolute;
+    right: 14px;
+    top: -4px;
+    height: 12px;
+    width: 12px;
+    background-color: var(--nav-color);
+    transform: rotate(-45deg);
+    z-index: -1;
+}
+
+.search-field input{
+    height: 100%;
+    width: 100%;
+    padding: 0 45px 0 15px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--search-text);
+    background-color: var(--search-bar);
+}
+
+body.dark .search-field input{
+    color: var(--text-color);
+}
+
+.search-field i{
+    position: absolute;
+    color: var(--nav-color);
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+body.dark .search-field i{
+    color: var(--text-color);
+}
+
+@media (max-width: 790px) {
+    nav .nav-bar .sidebarOpen{
+        display: block;
+    }
+
+    .menu{
+        position: fixed;
+        height: 100%;
+        width: 320px;
+        left: -100%;
+        top: 0;
+        padding: 20px;
+        background-color: var(--side-nav);
+        z-index: 100;
+        transition: all 0.4s ease;
+    }
+
+    nav.active .menu{
+        left: -0%;
+    }
+
+    nav.active .nav-bar .navLogo a{
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .menu .logo-toggle{
+        display: block;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo-toggle .siderbarClose{
+        color: var(--text-color);
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .nav-bar .nav-links{
+        flex-direction: column;
+        padding-top: 30px;
+    }
+
+    .nav-links li a{
+        display: block;
+        margin-top: 20px;
+    }
+}
+/* ...................slider................. */
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+  padding-top: 110px;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+/* .......secondslider.... */
+main{
+    width: 100%;
+    height: 840px;
+    /*background: red;*/
+    margin: 10px auto;
+    position: relative;
+    padding: 5px 0;
+}
+main .text{
+    padding: 10px;
+    text-align: center;
+    /*font-size: 30px;*/
+    color: #554;
+}
+header h1{
+    font-size: 40px;
+    color: white;
+    margin-left: 50px;
+    /* text-decoration: underline; */
+    padding-top: 20px;
+}
+.slider-arrow{
+    color: green;
+}
+.text p{
+    width: 60%;
+    padding: 5px;
+    margin: auto;
+    line-height: 30px;
+}
+main header{
+    width: 98%;
+    height: 60px;
+    margin: 0 auto;
+    /*background: gray;*/
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    justify-content: space-between;
+    border-bottom: 2px solid #ddd;
+}
+header p span{
+    font-size: 40px;
+    margin: 0 5px;
+    cursor: pointer;
+    color: #555;
+     width: 30px;
+    height: 30px;
+    display: inline-block;
+    line-height: 19px;
+    text-align: center;
+    border-radius: 3px;
+}
+header p span:hover{
+    background: #222;
+    color: white;
+}
+section{
+    width: 87%;
+    height: 429px;
+    /*background: red;*/
+    margin: auto;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+}
+section::-webkit-scrollbar{
+    display: none;
+}
+section .product{
+    min-width: 24%;
+    height: 90%;
+    background: whitesmoke;
+    margin:  0 20px  0 0;
+    border-radius: 20px;
+    position: relative;
+    left: 0;
+    transition: 0.5s;
+
+}
+picture{
+    width: 100%;
+    height: 70%;
+    padding: 20px;
+    /*background: green;*/
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+picture img{
+    width: 100%;
+}
+.detail,
+.button{
+    width: 90%;
+    /*background: red;*/
+    margin: auto;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    font-size: 20px;
+    color: #444;
+}
+small{color: #555;}
+a{
+    text-decoration: none;
+    padding: 6px 14px;
+    font-size: 15px;
+    margin: 5px 0 0 20px;
+    display: inline-block;
+    /* background: #6773ff; */
+    color: white;
+}
+p.star{
+    margin: 5px auto;
+    width: 65%;
+    font-size: 25px;
+    color: #808080;
+}
+@media (max-width: 768px) {
+    .text h1{
+        font-size: 35px;
+    }
+    .text p{
+        width: 90%;
+    }
+    header h1{
+        font-size: 25px;
+    }
+    header p span{
+        font-size: 30px;
+    }
+    section .product {
+        min-width: 49%;
+        margin:  0 10px  0 0;
+    }
+    .detail, .button{
+        font-size: 16px;
+    }
+    a{
+        padding: 6px 10px;
+    }
+}
+/* .....footer...... */
+.main-wrap{
+    width: 100%;
+    background: #fff;
+}
+.footer-wrap{
+    position: relative;
+    margin-top:320px; /*you can remove or edit this margin-top property when you are using this footer on your project. */
+    width:100%;
+    padding:40px;
+    background: rgb(46, 44, 44);
+}
+.footer-wrap-1{
+    display: flex;
+}
+.footer-section{
+    width:22%;
+    display:block;
+    padding:10px 35px;
+}
+.footer-section:last-of-type{
+    width:34%;
+}
+.footer-section p{
+    color:#fff;
+    font-size: 16px;
+}
+.footer-section h1{
+    font-size:22px;
+    color:#fff;
+    margin-bottom:8px;
+}
+.footer-section a{
+    color:#fff;
+    display: block;
+    text-decoration: none;
+    padding:4px 0px;
+}
+form{
+    position:relative;
+}
+form input{
+    position:absolute;
+    height:35px;
+    width: 220px;
+    margin:8px 0px;
+    border:none;
+    outline:none;
+    padding:6px;
+    font-size:14px;
+}
+form .btn{
+    height:35px;
+    background:rgb(79, 156, 69);
+    border:none;
+    padding:0px 6px;
+    margin:8px 0px;
+    position:absolute;
+    left:60%;
+    font-weight: 600;
+    cursor: pointer;
+    color:#fff;
+}
+.btn:hover{
+    background: rgb(107,204,94);
+}
+.line{
+    margin-top:20px;
+    width:100%;
+    height:1px;;
+    background: rgb(143, 142, 142);
+}
+.social-link{
+    padding-top:25px;
+    text-align: center;
+}
+.social-link a{
+    text-decoration: none;
+    height:26px;
+    display: inline-block;
+    width:26px;
+    padding:5px;
+    border-radius:20px;
+    margin:5px;
+    background: rgb(224, 222, 222);
+}
+.social-link a img{
+    width:14px;
+    height:14px;
+}
+.footer-bottom{
+    background: rgb(12, 12, 12);
+    width:100%;
+    padding:20px;
+    display: flex;
+    justify-content: space-between;
+}
+.footer-bottom a{
+    color:#fff;
+    font-size:14px;
+    margin-left:20px;
+    text-decoration:none;
+}
+.first-box{
+    margin-left: 20px;
+}
+.last-box{
+    margin-right:20px;
+}
+</style>
+<!-- ..................javascript................. -->
+<script>
+    const body = document.querySelector("body"),
+    nav = document.querySelector("nav"),
+    modeToggle = document.querySelector(".dark-light"),
+    searchToggle = document.querySelector(".searchToggle"),
+    sidebarOpen = document.querySelector(".sidebarOpen"),
+    siderbarClose = document.querySelector(".siderbarClose");
+
+    let getMode = localStorage.getItem("mode");
+        if(getMode && getMode === "dark-mode"){
+            body.classList.add("dark");
+        }
+
+// js code to toggle dark and light mode
+    modeToggle.addEventListener("click" , () =>{
+        modeToggle.classList.toggle("active");
+        body.classList.toggle("dark");
+
+        // js code to keep user selected mode even page refresh or file reopen
+        if(!body.classList.contains("dark")){
+            localStorage.setItem("mode" , "light-mode");
+        }else{
+            localStorage.setItem("mode" , "dark-mode");
+        }
+    });
+
+// js code to toggle search box
+        searchToggle.addEventListener("click" , () =>{
+        searchToggle.classList.toggle("active");
+    });
+
+    
+//   js code to toggle sidebar
+sidebarOpen.addEventListener("click" , () =>{
+    nav.classList.add("active");
+});
+
+body.addEventListener("click" , e =>{
+    let clickedElm = e.target;
+
+    if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
+        nav.classList.remove("active");
+    }
+});
+// ..................sliderjs..........................
+// 
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 8000); // Change image every 2 seconds
+}
+// ......................second-slider...........
+let span = document.getElementsByTagName('span');
+	let product = document.getElementsByClassName('product')
+	let product_page = Math.ceil(product.length/4);
+	let l = 0;
+	let movePer = 25.34;
+	let maxMove = 203;
+	// mobile_view	
+	let mob_view = window.matchMedia("(max-width: 768px)");
+	if (mob_view.matches)
+	 {
+	 	movePer = 50.36;
+	 	maxMove = 504;
+	 }
+
+	let right_mover = ()=>{
+		l = l + movePer;
+		if (product == 1){l = 0; }
+		for(const i of product)
+		{
+			if (l > maxMove){l = l - movePer;}
+			i.style.left = '-' + l + '%';
+		}
+
+	}
+	let left_mover = ()=>{
+		l = l - movePer;
+		if (l<=0){l = 0;}
+		for(const i of product){
+			if (product_page>1){
+				i.style.left = '-' + l + '%';
+			}
+		}
+	}
+	span[1].onclick = ()=>{right_mover();}
+	span[0].onclick = ()=>{left_mover();}
+</script>
+
+        
+
+
+
+        <!-- <script src="script.js"></script> -->
+</body>
+
+</html>
